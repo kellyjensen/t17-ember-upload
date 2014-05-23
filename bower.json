@@ -1,0 +1,26 @@
+{
+    "name": "t17-ember-upload",
+    "version": "0.1.0",
+    "main": [
+        "./dist/t17-ember-upload.js"
+    ],
+    "ignore": [
+        "node_modules",
+        "tmp"
+    ],
+    "dependencies": {
+        "ember": ">=1.2 <2"
+    },
+    "homepage": "https://github.com/trick17media/t17-ember-upload",
+    "authors": [
+        "Stefan Gasser <stefangasser.info@gmail.com>"
+    ],
+    "moduleType": [
+        "amd"
+    ],
+    "keywords": [
+        "upload",
+        "ember-upload"
+    ],
+    "license": "MIT"
+}

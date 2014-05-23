@@ -1,0 +1,15 @@
+{
+    "name": "t17-ember-upload",
+    "author": "Stefan Gasser",
+    "version": "0.1.0",
+    "description": "trick17.media Ember Upload",
+    "license": "MIT",
+    "main": "dist/t17-ember-upload.js",
+    "repository": "https://github.com/trick17media/t17-ember-upload",
+    "devDependencies": {
+        "grunt-es6-module-transpiler": "^0.6.0",
+        "grunt-contrib-concat": "^v0.4.0",
+        "grunt-contrib-cssmin": "^v0.9.0",
+        "grunt-contrib-copy": "^v0.5.0"
+    }
+}
