@@ -3,13 +3,13 @@ t17-ember-upload
 
 ####at the moment works only for [Ember App Kit](https://github.com/stefanpenner/ember-app-kit) / [Ember CLI](https://github.com/stefanpenner/ember-cli)
 
-trick17.media Ember Upload is a asynchronously file uploader with HTML5's drag and drop.
+trick17.media Ember Upload is an asynchronous file uploader with HTML5's drag and drop.
 
 ##Features
 
 * Upload files asynchronously
 * Upload with HTML5's drag and drop
-* Instant image previews upon dropping
+* Instant image previews after dropping
 * Allows the deletion of files before they're uploaded
 * Keeps a track of all files
 
@@ -74,6 +74,45 @@ Add the upload button.
 {{#view 'upload'}}
 	{{view view.MultipleInput id="upload"}}
 {{/view}}
+```
+
+###Example of category.hbs
+```html
+<!--app/templates/category.hbs-->
+{{#if hasUploads}}
+    <div>
+      <button {{action "uploadAll"}}>Upload all</button>
+      <label>Size: </label> {{totalFileSize}}
+        <ul>
+        {{#each file in files}}
+            <li>
+		<div>
+		    {{#if file.isDisplayableImage}}
+		        <img {{bind-attr src=file.base64Image}} />
+		    {{else}}
+		        <span>{{file.extension}}</span>
+		    {{/if}}
+		</div>
+		<div>
+		    {{#if file.isUploading}}
+		        <span>uploading...</span>
+		    {{/if}}
+		    {{#if file.didError}}
+		        <span>{{file.errorMessage.errors}}</span>
+		    {{/if}}
+		    {{#if file.didUpload}}
+		        <span>Successfully uploaded</span>
+		    {{/if}}
+		    {{#unless file.didUpload}}
+		        <a href="#" {{action "uploadFile" file}}>Upload</a>
+		    {{/unless}}
+		    <a href="#" {{action "removeFile" file}}>Remove File</a>
+		</div>
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+{{/if}}
 ```
 
 ##Thanks
