@@ -53,9 +53,9 @@ export default DropzoneView.extend({
 
 ```js
 //app/views/upload.js
-import {uploadInputView} from 't17-ember-upload';
+import {UploadInputView} from 't17-ember-upload';
 
-export default uploadInputView.extend();
+export default UploadInputView.extend();
 ```
 
 ### Template
