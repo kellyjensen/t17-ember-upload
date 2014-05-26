@@ -2,10 +2,10 @@ define("t17-ember-upload",
   ["t17-ember-upload/upload-input-view","t17-ember-upload/dropzone-view","t17-ember-upload/file-object","t17-ember-upload/upload-mixin","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __exports__) {
     "use strict";
-    var uploadInputMixin = __dependency1__.uploadInputMixin;
-    var dropzoneView = __dependency2__.dropzoneView;
-    var fileObject = __dependency3__.fileObject;
-    var uploadMixin = __dependency4__.uploadMixin;
+    var uploadInputMixin = __dependency1__["default"];
+    var dropzoneView = __dependency2__["default"];
+    var fileObject = __dependency3__["default"];
+    var uploadMixin = __dependency4__["default"];
 
     __exports__.uploadInputMixin = uploadInputMixin;
     __exports__.dropzoneView = dropzoneView;
