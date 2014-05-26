@@ -2,15 +2,15 @@ define("t17-ember-upload",
   ["t17-ember-upload/upload-input-view","t17-ember-upload/dropzone-view","t17-ember-upload/file-object","t17-ember-upload/upload-mixin","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __exports__) {
     "use strict";
-    var uploadInputMixin = __dependency1__["default"];
-    var dropzoneView = __dependency2__["default"];
-    var fileObject = __dependency3__["default"];
-    var uploadMixin = __dependency4__["default"];
+    var UploadInputMixin = __dependency1__["default"];
+    var DropzoneView = __dependency2__["default"];
+    var FileObject = __dependency3__["default"];
+    var UploadMixin = __dependency4__["default"];
 
-    __exports__.uploadInputMixin = uploadInputMixin;
-    __exports__.dropzoneView = dropzoneView;
-    __exports__.fileObject = fileObject;
-    __exports__.uploadMixin = uploadMixin;
+    __exports__.UploadInputMixin = UploadInputMixin;
+    __exports__.DropzoneView = DropzoneView;
+    __exports__.FileObject = FileObject;
+    __exports__.UploadMixin = UploadMixin;
   });
 define("t17-ember-upload/dropzone-view", 
   ["exports"],
@@ -123,7 +123,7 @@ define("t17-ember-upload/upload-mixin",
   ["t17-ember-upload/file-object","exports"],
   function(__dependency1__, __exports__) {
     "use strict";
-    var fileObject = __dependency1__["default"];
+    var FileObject = __dependency1__["default"];
 
     __exports__["default"] = Ember.Mixin.create({
         init: function() {
@@ -210,7 +210,7 @@ define("t17-ember-upload/upload-mixin",
             },
             filesDropped: function(files){
                 for (var i = 0; i < files.length; i++) {
-                    var fileUploadModel = fileObject.create({ fileToUpload: files[i] });
+                    var fileUploadModel = FileObject.create({ fileToUpload: files[i] });
                     if (Ember.isNone(this.get('files').findBy('name', files[i].name))){
                         this.get('files').pushObject(fileUploadModel);
                     }

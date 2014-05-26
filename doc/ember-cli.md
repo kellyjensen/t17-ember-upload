@@ -8,10 +8,10 @@ Using bower `bower install git://github.com/trick17media/t17-ember-upload.git#ma
 app.import('vendor/t17-ember-upload/dist/t17-ember-upload.js', {
   't17-ember-upload': [
     'default',
-    'uploadInputMixin',
-    'dropzoneView',
-    'fileObject',
-    'uploadMixin',
+    'UploadInputMixin',
+    'DropzoneView',
+    'FileObject',
+    'UploadMixin',
   ]
 });
 
@@ -33,9 +33,9 @@ app.import('vendor/t17-ember-upload/dist/t17-ember-upload.min.css');
 
 ```js
 //app/controllers/category.js
-import {uploadMixin} from 't17-ember-upload';
+import {UploadMixin} from 't17-ember-upload';
 
-export default Ember.ObjectController.extend(uploadMixin, {
+export default Ember.ObjectController.extend(UploadMixin, {
     uploadUrl: 'http://example.com/images'
 });
 ```
@@ -44,9 +44,9 @@ export default Ember.ObjectController.extend(uploadMixin, {
 
 ```js
 //app/views/category.js
-import {dropzoneView} from 't17-ember-upload';
+import {DropzoneView} from 't17-ember-upload';
 
-export default dropzoneView.extend({
+export default DropzoneView.extend({
     element : '#two', //you can override the element of the dropzone, default is body
 });
 ```
