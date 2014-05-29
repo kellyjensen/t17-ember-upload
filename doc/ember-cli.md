@@ -8,7 +8,7 @@ Using bower `bower install git://github.com/trick17media/t17-ember-upload.git#ma
 app.import('vendor/t17-ember-upload/dist/t17-ember-upload.js', {
   't17-ember-upload': [
     'default',
-    'UploadInputMixin',
+    'UploadInputView',
     'DropzoneView',
     'FileObject',
     'UploadMixin',
