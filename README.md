@@ -1,6 +1,8 @@
 t17-ember-upload
 ================
 
+######Version 0.3.3
+
 ####at the moment works only for [Ember App Kit](https://github.com/stefanpenner/ember-app-kit) / [Ember CLI](https://github.com/stefanpenner/ember-cli)
 
 trick17.media Ember Upload is an asynchronous file uploader with HTML5's drag and drop.
