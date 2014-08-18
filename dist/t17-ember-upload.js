@@ -170,7 +170,7 @@ define("t17-ember-upload/upload-mixin",
                 if (Ember.isArray(this.get('postData'))){
                     this.get('postData').forEach(function(data){
                         for (var key in data){
-                            fd.append(key, data[key]);
+                            fd.append(key.toString(), data[key].toString());
                         }
                     });
                 }
