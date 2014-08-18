@@ -1,6 +1,6 @@
 ## Getting Started
 ### Install
-Using bower `bower install git://github.com/trick17media/t17-ember-upload.git#master --save`
+Using bower `bower install t17-ember-upload --save`
 
 ### Include
 
