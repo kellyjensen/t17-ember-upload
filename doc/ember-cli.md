@@ -6,7 +6,7 @@ Using bower `bower install t17-ember-upload --save`
 
 ```js
 app.import('vendor/t17-ember-upload/dist/t17-ember-upload.js', {
-  exports: {	
+  exports: {
      't17-ember-upload': [
        'default',
        'UploadInputView',
@@ -18,12 +18,6 @@ app.import('vendor/t17-ember-upload/dist/t17-ember-upload.js', {
 });
 
 app.import('vendor/t17-ember-upload/dist/t17-ember-upload.min.css');
-```
-
-### Add vendor.css to index.html
-
-```html
-<link rel="stylesheet" href="assets/vendor.css">
 ```
 
 ## Basic Setup
