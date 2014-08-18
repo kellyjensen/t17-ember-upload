@@ -6,13 +6,15 @@ Using bower `bower install t17-ember-upload --save`
 
 ```js
 app.import('vendor/t17-ember-upload/dist/t17-ember-upload.js', {
-  't17-ember-upload': [
-    'default',
-    'UploadInputView',
-    'DropzoneView',
-    'FileObject',
-    'UploadMixin',
-  ]
+  exports: {	
+     't17-ember-upload': [
+       'default',
+       'UploadInputView',
+       'DropzoneView',
+       'FileObject',
+       'UploadMixin',
+     ]
+  }
 });
 
 app.import('vendor/t17-ember-upload/dist/t17-ember-upload.min.css');
