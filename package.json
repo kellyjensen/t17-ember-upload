@@ -1,7 +1,7 @@
 {
     "name": "t17-ember-upload",
     "author": "Stefan Gasser",
-    "version": "0.3.5",
+    "version": "0.3.6",
     "description": "trick17.media Ember Upload",
     "license": "MIT",
     "main": "dist/t17-ember-upload.js",

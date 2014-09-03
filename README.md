@@ -1,7 +1,7 @@
 t17-ember-upload
 ================
 
-######Version 0.3.5
+######Version 0.3.6
 
 ####at the moment works only for [Ember App Kit](https://github.com/stefanpenner/ember-app-kit) / [Ember CLI](https://github.com/stefanpenner/ember-cli)
 
