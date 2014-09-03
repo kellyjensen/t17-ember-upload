@@ -1,4 +1,4 @@
-define("t17-ember-upload", 
+define("t17-ember-upload",
   ["t17-ember-upload/upload-input-view","t17-ember-upload/dropzone-view","t17-ember-upload/file-object","t17-ember-upload/upload-mixin","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __exports__) {
     "use strict";
@@ -12,7 +12,7 @@ define("t17-ember-upload",
     __exports__.FileObject = FileObject;
     __exports__.UploadMixin = UploadMixin;
   });
-define("t17-ember-upload/dropzone-view", 
+define("t17-ember-upload/dropzone-view",
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -58,7 +58,7 @@ define("t17-ember-upload/dropzone-view",
         }
     });
   });
-define("t17-ember-upload/file-object", 
+define("t17-ember-upload/file-object",
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -101,7 +101,7 @@ define("t17-ember-upload/file-object",
         }.property('name'),
     });
   });
-define("t17-ember-upload/upload-input-view", 
+define("t17-ember-upload/upload-input-view",
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -119,7 +119,7 @@ define("t17-ember-upload/upload-input-view",
         }),
     });
   });
-define("t17-ember-upload/upload-mixin", 
+define("t17-ember-upload/upload-mixin",
   ["t17-ember-upload/file-object","exports"],
   function(__dependency1__, __exports__) {
     "use strict";
@@ -169,9 +169,9 @@ define("t17-ember-upload/upload-mixin",
 
                 if (Ember.isArray(this.get('postData'))){
                     this.get('postData').forEach(function(data){
-                        for (var key in data){
-                            fd.append(key.toString(), data[key].toString());
-                        }
+                        Ember.keys(data).forEach(function (key) {
+                            fd.append(key.toString(), data.get(key).toString());
+                        });
                     });
                 }
 
