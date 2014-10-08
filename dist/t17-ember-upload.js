@@ -1,4 +1,4 @@
-define("t17-ember-upload",
+define("t17-ember-upload", 
   ["t17-ember-upload/upload-input-view","t17-ember-upload/dropzone-view","t17-ember-upload/file-object","t17-ember-upload/upload-mixin","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __exports__) {
     "use strict";
@@ -12,7 +12,7 @@ define("t17-ember-upload",
     __exports__.FileObject = FileObject;
     __exports__.UploadMixin = UploadMixin;
   });
-define("t17-ember-upload/dropzone-view",
+define("t17-ember-upload/dropzone-view", 
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -58,7 +58,7 @@ define("t17-ember-upload/dropzone-view",
         }
     });
   });
-define("t17-ember-upload/file-object",
+define("t17-ember-upload/file-object", 
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -76,7 +76,6 @@ define("t17-ember-upload/file-object",
             this.set('size', fileToUpload.size);
             // Don't read anything bigger than 10 MB
             if (isImage && fileToUpload.size < 10 * 1024 * 1024) {
-                this.set('isDisplayableImage', isImage);
                 var reader = new FileReader();
                 reader.onload = function(e) {
                     self.set('base64Image', e.target.result);
@@ -86,7 +85,6 @@ define("t17-ember-upload/file-object",
         }.on('init'),
         name: '',
         size: 0,
-        isDisplayableImage: false,
         base64Image: '',
         fileToUpload: null,
         uploadJqXHR: null,
@@ -97,11 +95,19 @@ define("t17-ember-upload/file-object",
         errorMessage: null,
         extension: function () {
             var ext = /(?:\.([^.]+))?$/;
-            return ext.exec(this.get('name'))[1];
+            return ext.exec(this.get('name').toLowerCase())[1];
         }.property('name'),
+        isDisplayableImage: function () {
+            var supportedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+            if(!Ember.isNone(this.get('extension')) && !Ember.isEmpty(this.get('base64Image'))){
+                if (supportedExtensions.contains(this.get('extension'))) {
+                    return true;
+                }
+             }
+        }.property('extension', 'base64Image'),
     });
   });
-define("t17-ember-upload/upload-input-view",
+define("t17-ember-upload/upload-input-view", 
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -119,7 +125,7 @@ define("t17-ember-upload/upload-input-view",
         }),
     });
   });
-define("t17-ember-upload/upload-mixin",
+define("t17-ember-upload/upload-mixin", 
   ["t17-ember-upload/file-object","exports"],
   function(__dependency1__, __exports__) {
     "use strict";
