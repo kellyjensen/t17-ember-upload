@@ -92,6 +92,7 @@ define("t17-ember-upload/file-object",
         isUploading: false,
         didUpload: false,
         didError: false,
+        responseData: {},
         errorMessage: null,
         extension: function () {
             var ext = /(?:\.([^.]+))?$/;
@@ -197,6 +198,7 @@ define("t17-ember-upload/upload-mixin",
                 try {
                     value = data.getElementsByTagName('Location')[0].textContent;
                 } catch (e) { }
+                    file.set('responseData', data);
                     file.set('isUploading', false);
                     file.set('didUpload', true);
                     file.get('uploadPromise').resolve(value);
