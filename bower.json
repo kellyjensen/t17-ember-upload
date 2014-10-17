@@ -1,6 +1,6 @@
 {
     "name": "t17-ember-upload",
-    "version": "0.3.7",
+    "version": "0.4.0",
     "main": [
         "./dist/t17-ember-upload.js"
     ],
