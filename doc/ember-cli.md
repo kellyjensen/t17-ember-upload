@@ -5,7 +5,7 @@ Using bower `bower install t17-ember-upload --save`
 ### Import t17-ember-upload.js and t17-ember-upload.min.css in Brocfile.js
 
 ```js
-app.import('vendor/t17-ember-upload/dist/t17-ember-upload.js', {
+app.import('bower_components/t17-ember-upload/dist/t17-ember-upload.js', {
   exports: {
      't17-ember-upload': [
        'default',
@@ -17,7 +17,7 @@ app.import('vendor/t17-ember-upload/dist/t17-ember-upload.js', {
   }
 });
 
-app.import('vendor/t17-ember-upload/dist/t17-ember-upload.min.css');
+app.import('bower_components/t17-ember-upload/dist/t17-ember-upload.min.css');
 ```
 
 ## Basic Setup
