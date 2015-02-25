@@ -27,10 +27,10 @@ define("t17-ember-upload/dropzone-view",
                 return false;
             };
             var addDropzone = function() {
-                self.controller.set('showDropzone', true);
+                self.get('controller').set('showDropzone', true);
             };
             var removeDropzone = function() {
-                self.controller.set('showDropzone', false);
+                self.get('controller').set('showDropzone', false);
             };
             $('.dropzone').on('click', removeDropzone);
             $(this.get('element')).on('dragover', function(evt) {
@@ -48,7 +48,7 @@ define("t17-ember-upload/dropzone-view",
             }).on('drop', function(evt) {
                 removeDropzone();
                 if (dragDropEventHasFiles(evt)) {
-                    self.controller.send('filesDropped', evt.dataTransfer.files);
+                    self.get('controller').send('filesDropped', evt.dataTransfer.files);
                     return false;
                 }
             });
@@ -66,7 +66,7 @@ define("t17-ember-upload/file-object",
         init: function() {
             this._super();
             Ember.assert("File to upload required on init.", !!this.get('fileToUpload'));
-            this.set('uploadPromise', Ember.Deferred.create());
+            this.set('uploadPromise', Ember.RSVP.defer());
         },
         readFile: function() {
             var self = this;
@@ -116,7 +116,7 @@ define("t17-ember-upload/upload-input-view",
         MultipleInput: Ember.View.extend({
             tagName: 'input',
             classNames: 'files',
-            attributeBindings: ['type', 'multiple'],
+            attributeBindings: ['type', 'multiple', 'accept'],
             type: 'file',
             multiple: 'multiple',
             change: function(e) {
